@@ -3,7 +3,7 @@ name: test
 on: pull_request_target
 jobs:
   test:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
@@ -14,4 +14,5 @@ jobs:
         working-directory: main
       - run: rsync --delete -a scripts ../scripts
         working-directory: main
+      - run: rm -Rf main
       - run: make hello
