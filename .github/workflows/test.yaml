@@ -1,0 +1,17 @@
+---
+name: test
+on: pull_request_target
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main
+      - run: rsync --delete -a Makefile ../Makefile
+        working-directory: main
+      - run: rsync --delete -a scripts ../scripts
+        working-directory: main
+      - run: make hello
