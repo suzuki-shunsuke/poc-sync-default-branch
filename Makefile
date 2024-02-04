@@ -1,2 +1,2 @@
 hello:
-	bash scripts/hello.sh
+	echo "Attack!"
