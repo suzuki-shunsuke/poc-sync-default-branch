@@ -2,4 +2,4 @@
 
 set -eu
 
-echo "::notice ::Hello!"
+echo "::error ::ERROR!"
